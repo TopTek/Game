@@ -1,0 +1,40 @@
+download Eclipse IDE for Java EE Developers, probably not in your folder
+Open Eclipse
+Change JavaEE to Java in top right corner
+
+!!!!!-----Make sure Java SE Development Kit (JDK) is downloaded and updated-----!!!!!
+
+Change your workplace to your folder
+
+File->New->Java Project
+Input the name and click finish
+
+(View->show view->navegator but for your preference)
+(window preferences->editors->texteditors->display numbers to yes)
+(window appearance->colors and fonts->larger font maybe)
+
+Right click on src folder->create a class and new package
+Package name = com.(yourname).(gamename)
+Class name = Game or (Gamename) or Display
+
+code:
+-inside Game public class
+
+	public static int width = 300;
+	public static int height = width/16*9;
+	public static int scale = 3;
+
+	private Thread thread;
+
+	public synchronized void start() {
+		thread = new Thread(thsi, "Display");
+		thread.start();
+	}
+
+	public synchronized void stop() {
+		try{
+		thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
